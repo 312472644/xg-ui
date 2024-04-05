@@ -1,0 +1,11 @@
+packages:
+  # 组件库
+  - 'packages/*'
+  # 组件文档说明
+  - 'docs'
+  # 件库的在线编辑、演示应用。
+  - 'playground'
+  # 构建工具
+  - 'build'
+  # web演示
+  - 'web'
