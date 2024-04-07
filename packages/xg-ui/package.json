@@ -9,7 +9,8 @@
   "exports": {
     ".": {
       "import": "./dist/xg-ui.mjs",
-      "require": "./dist/xg-ui.js"
+      "require": "./dist/xg-ui.js",
+      "default": "./dist/xg-ui.mjs"
     },
     "./dist/style.css": "./dist/style.css"
   },

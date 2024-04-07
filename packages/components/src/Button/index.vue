@@ -8,6 +8,10 @@ defineOptions({
   name: 'Button',
 });
 
+defineProps({
+  type: String,
+});
+
 const handleClick = () => {
   console.log('@xg-ui/shared', getDate());
 };
