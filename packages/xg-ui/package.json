@@ -10,9 +10,14 @@
     ".": {
       "import": "./dist/xg-ui.mjs",
       "require": "./dist/xg-ui.js"
-    }
+    },
+    "./dist/style.css": "./dist/style.css"
   },
   "keywords": [],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {

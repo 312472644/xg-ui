@@ -5,7 +5,7 @@ export default defineConfig({
     lib: {
       entry: './index.js',
       name: 'Xgui',
-      formats: ['es'],
+      formats: ['es', 'cjs'],
       fileName: 'xg-ui',
     },
     minify: true,

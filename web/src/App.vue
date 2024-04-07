@@ -1,11 +1,12 @@
 <template>
   <div>
     <Button>Button</Button>
+    <Text />
   </div>
 </template>
 <script setup>
-import { Button } from '@xg-ui/xg-ui';
-
+import { Button, Text } from '@xg-ui/xg-ui';
+import '@xg-ui/xg-ui/dist/style.css';
 </script>
 
-<style scoped></style>
+<style></style>

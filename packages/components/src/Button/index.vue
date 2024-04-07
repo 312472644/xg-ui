@@ -13,5 +13,12 @@ const handleClick = () => {
 };
 </script>
 <style>
-@import './button.css';
+.button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
 </style>

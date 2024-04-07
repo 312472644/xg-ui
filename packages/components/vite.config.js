@@ -10,20 +10,16 @@ export default defineConfig({
       entry: getEntry('./src').concat('./index.js'),
       formats: ['es'],
     },
-    // cssCodeSplit: false,
+    cssCodeSplit: false,
     rollupOptions: {
       output: {
+        chunkFileNames: 'lib/[name].js',
         entryFileNames: chunkInfo => {
           const facadeModuleId = chunkInfo.facadeModuleId;
           if (facadeModuleId.includes('index.js')) return 'index.js';
           const name = facadeModuleId.split('/').slice(-2, -1).join('');
           return `${name}/index.js`;
         },
-        //assetFileNames: assetInfo => {
-        // console.log('assetInfo', assetInfo);
-        // const name = assetInfo.name.split('/').slice(-2, -1).join('');
-        // return `${name}/[name].[ext]`;
-        //},
       },
       external: [
         // 这里是一个正则表达式，匹配所有以 xg-ui 开头的依赖
@@ -32,6 +28,6 @@ export default defineConfig({
       ],
     },
     sourcemap: false,
-    minify: false,
+    minify: true,
   },
 });

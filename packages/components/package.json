@@ -10,17 +10,20 @@
   "peerDependencies": {
     "vue": ">=3.0.0"
   },
-  "exports": {
-    "./dist/css": {
-      "import": "./dist/style.css"
-    }
-  },
   "keywords": [],
   "files": [
     "dist",
     "README.md"
   ],
   "author": "",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
   "license": "ISC",
   "dependencies": {
     "@xg-ui/shared": "workspace:^"

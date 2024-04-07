@@ -6,4 +6,9 @@ defineOptions({
   name: 'Text',
 });
 </script>
-<style scoped></style>
+<style>
+.text {
+  color: red;
+  font-size: 20px;
+}
+</style>
