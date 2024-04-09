@@ -7,3 +7,11 @@ import dayjs from 'dayjs';
 export function getDate() {
   return dayjs().format('YYYY-MM-DD');
 }
+
+/**
+ * 获取dayjs对象
+ * @returns {dayjs.Dayjs}
+ */
+export function getDayjs() {
+  return dayjs;
+}

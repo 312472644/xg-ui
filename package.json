@@ -17,11 +17,7 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "keywords": [
-    "ui",
-    "xg-ui",
-    "vue3"
-  ],
+  "keywords": [],
   "engines": {
     "node": ">=18.0.0"
   },

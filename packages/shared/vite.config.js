@@ -4,7 +4,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: './index.js',
-      name: 'XguiShared',
+      name: 'xgUiShared',
       formats: ['es', 'cjs', 'umd'],
       fileName: 'xg-ui-shared',
     },

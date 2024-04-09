@@ -1,7 +1,7 @@
 {
   "name": "@xg-ui/shared",
   "version": "1.0.0",
-  "description": "",
+  "description": "工具库",
   "main": "./dist/xg-ui-shared.umd.js",
   "scripts": {
     "build": "vite build"

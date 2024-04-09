@@ -14,7 +14,13 @@
     },
     "./dist/style.css": "./dist/style.css"
   },
-  "keywords": [],
+  "keywords": [
+    "ui",
+    "shared",
+    "components",
+    "xg-ui",
+    "vue3"
+  ],
   "files": [
     "dist",
     "README.md"

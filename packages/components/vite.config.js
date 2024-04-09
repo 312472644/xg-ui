@@ -21,11 +21,7 @@ export default defineConfig({
           return `${name}/index.js`;
         },
       },
-      external: [
-        // 这里是一个正则表达式，匹配所有以 xg-ui 开头的依赖
-        /@xg-ui.*/,
-        'vue',
-      ],
+      external: [/@xg-ui.*/, 'vue'],
     },
     sourcemap: false,
     minify: true,
