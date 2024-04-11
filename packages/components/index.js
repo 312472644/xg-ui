@@ -1,12 +1,24 @@
-import { withInstall, getExportCompObject } from './utils';
+export * from './Button/index';
+export * from './Input/index';
+export * from './Text/index';
 
-import Button from './src/Button/index.vue';
-import Text from './src/Text/index.vue';
+// import { XgButton } from './Button/index';
+// import { XgInput } from './Input/index';
+// import { XgText } from './Text/index';
 
-const componentList = [Button, Text];
-const component = getExportCompObject(componentList);
+// const components = [XgButton, XgInput, XgText];
 
-// 统一组件导出
-export { component };
-// 默认导出全部组件，需要安装才能使用
-export default withInstall(componentList);
+// export function install(app) {
+//   components.forEach(item => {
+//     if (item.install) {
+//       app.use(item);
+//     } else if (item.name) {
+//       app.component(item.name, item);
+//     }
+//   });
+// }
+
+// export default {
+//   install,
+//   components,
+// };

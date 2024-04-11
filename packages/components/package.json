@@ -4,6 +4,7 @@
   "private": false,
   "description": "组件库",
   "main": "dist/index.js",
+  "style": "dist/index.css",
   "scripts": {
     "build": "vite build"
   },
@@ -21,14 +22,11 @@
       "import": "./dist/index.js",
       "require": "./dist/index.js",
       "default": "./dist/index.js"
-    },
-    "./dist/style.css": "./dist/style.css"
+    }
   },
   "license": "ISC",
-  "dependencies": {
-    "@xg-ui/shared": "workspace:^"
-  },
   "devDependencies": {
-    "@xg-ui/build": "workspace:^"
+    "@xg-ui/build": "workspace:^",
+    "@xg-ui/utils": "workspace:^"
   }
 }

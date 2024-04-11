@@ -7,7 +7,7 @@
   "module": "index.mjs",
   "scripts": {
     "build:ui": "pnpm --filter ./packages/** run build",
-    "build:packages:shared": "pnpm --filter @xg-ui/shared run build"
+    "build:shared": "pnpm --filter @xg-ui/shared run build"
   },
   "files": [
     "dist",

@@ -8,4 +8,4 @@ packages:
   # 构建工具
   - 'build'
   # web演示
-  - 'web'
+  - 'example'
