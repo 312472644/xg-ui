@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-const glob = require('fast-glob');
+// const glob = require('fast-glob');
 // const { generateCSS } = require('@xg-ui/build/plugins');
 const { utils } = require('@xg-ui/build');
 const { getRollupEntry } = utils;

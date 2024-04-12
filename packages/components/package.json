@@ -2,9 +2,8 @@
   "name": "@xg-ui/components",
   "version": "0.0.0",
   "private": false,
-  "description": "组件库",
-  "main": "dist/index.js",
-  "style": "dist/index.css",
+  "description": "所有组件安装",
+  "main": "index.js",
   "scripts": {
     "build": "vite build"
   },
@@ -16,15 +15,9 @@
     "dist",
     "README.md"
   ],
-  "author": "",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.js",
-      "default": "./dist/index.js"
-    }
-  },
+  "author": "xx",
   "license": "ISC",
+  "sideEffects": false,
   "devDependencies": {
     "@xg-ui/build": "workspace:^",
     "@xg-ui/utils": "workspace:^"
