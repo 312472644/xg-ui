@@ -3,7 +3,11 @@
     <slot>button</slot>
   </button>
 </template>
-<script setup></script>
+<script setup>
+defineOptions({
+  name: 'XgButton',
+});
+</script>
 <style lang="scss">
 .button {
   background-color: #007bff;

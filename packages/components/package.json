@@ -19,7 +19,6 @@
   "license": "ISC",
   "sideEffects": false,
   "devDependencies": {
-    "@xg-ui/build": "workspace:^",
     "@xg-ui/utils": "workspace:^"
   }
 }

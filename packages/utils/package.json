@@ -2,15 +2,14 @@
   "name": "@xg-ui/utils",
   "version": "1.0.0",
   "description": "",
-  "main": "./dist/xg-utils.cjs.js",
-  "module": "dist/xg-utils.es.js",
+  "main": "index.js",
   "scripts": {
     "build": "vite build"
   },
   "keywords": [],
   "exports": {
     ".": {
-      "import": "./dist/xg-utils.es.js",
+      "import": "./index.js",
       "require": "./dist/xg-utils.mjs.js",
       "default": "./dist/xg-utils.es.js"
     }

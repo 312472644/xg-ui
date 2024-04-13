@@ -1,7 +1,11 @@
 <template>
   <input class="input" />
 </template>
-<script setup></script>
+<script setup>
+defineOptions({
+  name: 'XgInput',
+});
+</script>
 <style>
 .input {
   padding: 10px;

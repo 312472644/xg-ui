@@ -38,6 +38,9 @@ importers:
       '@vitejs/plugin-vue':
         specifier: ^5.0.4
         version: 5.0.4(vite@5.2.8)(vue@3.4.21)
+      '@xg-ui/element':
+        specifier: workspace:^
+        version: link:../packages/element
       vite:
         specifier: ^5.1.6
         version: 5.2.8(sass@1.74.1)
@@ -48,9 +51,6 @@ importers:
         specifier: '>=3.0.0'
         version: 3.4.21
     devDependencies:
-      '@xg-ui/build':
-        specifier: workspace:^
-        version: link:../../build
       '@xg-ui/utils':
         specifier: workspace:^
         version: link:../utils
@@ -60,6 +60,13 @@ importers:
       '@xg-ui/components':
         specifier: workspace:^
         version: link:../components
+      '@xg-ui/utils':
+        specifier: workspace:^
+        version: link:../utils
+    devDependencies:
+      '@xg-ui/build':
+        specifier: workspace:^
+        version: link:../../build
 
   packages/shared:
     dependencies:

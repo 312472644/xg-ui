@@ -2,16 +2,17 @@ const fs = require('fs');
 const path = require('path');
 
 /**
- * 获取Rollup入口文件
- * @param {string} folderPath 文件夹路径
- * @returns {Object<string,string>} 入口文件路径
+ * 获取入口文件名, 对于指定目录下的文件, 去掉该目录前缀
+ * @param {Object} chunkInfo chunk信息
+ * @param {String} format 文件格式
+ * @param {String} directory 输出目录
+ * @returns {String} 入口文件名
  */
-function getRollupEntry(folderPath) {
-  const entry = {};
-  fs.readdirSync(folderPath).forEach(file => {
-    entry[file] = path.join(folderPath, file, 'index.js');
-  });
-  return entry;
+function getEntryFileNames(chunkInfo, format = '.mjs', directory = 'element') {
+  if (chunkInfo.name.includes(directory)) {
+    return chunkInfo.name.replace(`${directory}/`, '') + format;
+  }
+  return `[name]${format}`;
 }
 
-module.exports = { getRollupEntry };
+module.exports = { getEntryFileNames };

@@ -1,7 +1,11 @@
 <template>
   <div class="text">text组件</div>
 </template>
-<script setup></script>
+<script setup>
+defineOptions({
+  name: 'XgText',
+});
+</script>
 <style>
 .text {
   color: #333;

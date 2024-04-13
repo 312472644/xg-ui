@@ -1,15 +1,38 @@
 {
   "name": "@xg-ui/element",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "xg-ui 所有包打统一入口",
+  "main": "./dist/lib/index.js",
+  "module": "./dist/es/index.mjs",
   "scripts": {
     "build": "vite build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "style": "dist/index.css",
+  "exports": {
+    ".": {
+      "require": "./dist/lib/index.js",
+      "import": "./dist/es/index.mjs"
+    },
+    "./es": "./dist/es/index.mjs",
+    "./lib": "./dist/index.js",
+    "./*": "./*",
+    "./dist/style.css": "./dist/dist/index.css"
+  },
+  "sideEffects": [
+    "dist/*",
+    "theme-chalk/**/*.css",
+    "theme-chalk/src/**/*.scss",
+    "es/components/*/style/*",
+    "lib/components/*/style/*"
+  ],
   "dependencies": {
-    "@xg-ui/components": "workspace:^"
+    "@xg-ui/components": "workspace:^",
+    "@xg-ui/utils": "workspace:^"
+  },
+  "devDependencies": {
+    "@xg-ui/build": "workspace:^"
   }
 }

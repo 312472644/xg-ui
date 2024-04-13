@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "npm run build:ui & vite",
+    "build:ui": "pnpm --filter @xg-ui/element run build",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -13,6 +14,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
-    "vite": "^5.1.6"
+    "vite": "^5.1.6",
+    "@xg-ui/element": "workspace:^"
   }
 }
