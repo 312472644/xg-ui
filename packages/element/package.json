@@ -21,13 +21,6 @@
     "./*": "./*",
     "./dist/style.css": "./dist/dist/index.css"
   },
-  "sideEffects": [
-    "dist/*",
-    "theme-chalk/**/*.css",
-    "theme-chalk/src/**/*.scss",
-    "es/components/*/style/*",
-    "lib/components/*/style/*"
-  ],
   "dependencies": {
     "@xg-ui/components": "workspace:^",
     "@xg-ui/utils": "workspace:^"

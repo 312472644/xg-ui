@@ -51,6 +51,9 @@ importers:
         specifier: '>=3.0.0'
         version: 3.4.21
     devDependencies:
+      '@xg-ui/theme-chalk':
+        specifier: workspace:^
+        version: link:../theme-chalk
       '@xg-ui/utils':
         specifier: workspace:^
         version: link:../utils

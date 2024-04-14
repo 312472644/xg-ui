@@ -6,9 +6,4 @@ defineOptions({
   name: 'XgText',
 });
 </script>
-<style>
-.text {
-  color: #333;
-  font-size: 16px;
-}
-</style>
+<style></style>

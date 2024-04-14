@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const Chalk = require('chalk');
 
 /**
  * @typedef {Object} Options
@@ -40,9 +39,9 @@ module.exports = function generateCSS(options = { fileName: '' }) {
       const ptah = path.join(process.cwd(), output, fileName);
       fs.writeFile(ptah, content, err => {
         if (!err) {
-          console.log(Chalk.hex('#4bb14f')(`css文件生成成功：${path.join(output, fileName)}`));
+          console.log(`css文件生成成功：${path.join(output, fileName)}`);
         } else {
-          console.log(Chalk.hex('#e23335')(`css文件生成失败：${err}`));
+          console.log(`css文件生成失败：${err}`);
         }
       });
     },

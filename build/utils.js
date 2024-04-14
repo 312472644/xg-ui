@@ -1,6 +1,3 @@
-const fs = require('fs');
-const path = require('path');
-
 /**
  * 获取入口文件名, 对于指定目录下的文件, 去掉该目录前缀
  * @param {Object} chunkInfo chunk信息
