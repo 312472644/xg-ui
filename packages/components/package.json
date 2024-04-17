@@ -17,7 +17,6 @@
   "license": "ISC",
   "sideEffects": false,
   "devDependencies": {
-    "@xg-ui/utils": "workspace:^",
-    "@xg-ui/theme-chalk": "workspace:^"
+    "@xg-ui/utils": "workspace:^"
   }
 }

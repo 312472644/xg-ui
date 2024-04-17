@@ -8,6 +8,4 @@ defineOptions({
   name: 'XgButton',
 });
 </script>
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

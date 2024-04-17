@@ -2,14 +2,13 @@
   "name": "@xg-ui/theme-chalk",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/index.scss",
+  "main": "./dist/src/button.css",
   "scripts": {
     "build": "vite build "
   },
   "exports": {
     ".": {
-      "import": "./src/index.scss",
-      "require": "./src/index.scss"
+      "import": "./dist/src/button.css"
     }
   },
   "keywords": [],

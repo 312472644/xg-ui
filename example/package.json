@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "npm run build:ui & vite",
+    "dev": "vite",
     "build:ui": "pnpm --filter @xg-ui/element run build",
     "build": "vite build",
     "preview": "vite preview"

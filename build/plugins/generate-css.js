@@ -1,5 +1,7 @@
 const fs = require('fs');
 const path = require('path');
+const CleanCSS = require('clean-css');
+const { logError, logSuccess } = require('../utils');
 
 /**
  * @typedef {Object} Options
@@ -14,7 +16,6 @@ const path = require('path');
 module.exports = function generateCSS(options = { fileName: '' }) {
   const { fileName } = options;
   const mergeOptions = { filePath: '', fileName };
-  // const output = mergeOptions.output;
   const cssSourceList = [];
   return {
     name: 'vite-plugin-generate-css',
@@ -34,14 +35,13 @@ module.exports = function generateCSS(options = { fileName: '' }) {
     closeBundle() {
       const output = mergeOptions.filePath;
       const fileName = mergeOptions.fileName;
-      const reg = new RegExp(/\r\n|\n|\s+/, 'g');
-      const content = cssSourceList.map(item => item.replace(reg, '')).join('');
+      const content = new CleanCSS().minify(cssSourceList.join('')).styles;
       const ptah = path.join(process.cwd(), output, fileName);
       fs.writeFile(ptah, content, err => {
         if (!err) {
-          console.log(`css文件生成成功：${path.join(output, fileName)}`);
+          logSuccess(`[vite-plugin-generate-css] css文件合并成功：${path.join(output, fileName)}`);
         } else {
-          console.log(`css文件生成失败：${err}`);
+          logError(`[vite-plugin-generate-css] css文件合并失败：${err}`);
         }
       });
     },

@@ -1,9 +1,9 @@
 import { defineConfig } from 'vite';
 const { plugins } = require('@xg-ui/build');
-const { removeBundleFile } = plugins;
+const { removeBundleFile, generateCSS } = plugins;
 
 export default defineConfig({
-  plugins: [removeBundleFile({ fileList: ['./dist/theme-chalk.mjs'] })],
+  plugins: [removeBundleFile({ fileList: ['./dist/theme-chalk.mjs'] }), generateCSS()],
   build: {
     lib: {
       entry: './index.js',

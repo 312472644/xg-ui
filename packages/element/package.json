@@ -4,8 +4,9 @@
   "description": "xg-ui 所有包打统一入口",
   "main": "./dist/lib/index.js",
   "module": "./dist/es/index.mjs",
-  "scripts": {
-    "build": "vite build"
+  "scripts": { 
+    "build": "pnpm run build:theme-chalk & vite build",
+    "build:theme-chalk": "pnpm --filter @xg-ui/theme-chalk run build"
   },
   "keywords": [],
   "author": "",
@@ -19,8 +20,10 @@
     "./es": "./dist/es/index.mjs",
     "./lib": "./dist/index.js",
     "./*": "./*",
-    "./dist/style.css": "./dist/dist/index.css"
+    "./style.css": "./dist/theme-chalk/index.css",
+    "./style/*/index.css": "./dist/theme-chalk/src/*.css"
   },
+  "sideEffects": false,
   "dependencies": {
     "@xg-ui/components": "workspace:^",
     "@xg-ui/utils": "workspace:^"

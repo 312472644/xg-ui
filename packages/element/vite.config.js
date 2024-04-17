@@ -1,15 +1,16 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-const { utils } = require('@xg-ui/build');
+const { utils, plugins } = require('@xg-ui/build');
 const { getEntryFileNames } = utils;
+const { copyDest } = plugins;
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), copyDest({ target: '/theme-chalk/dist', source: '/element/dist/theme-chalk' })],
   build: {
     lib: {
       entry: './index.js',
     },
-    cssCodeSplit: false,
+    cssCodeSplit: true,
     rollupOptions: {
       output: [
         {
@@ -18,6 +19,9 @@ export default defineConfig({
           preserveModules: true,
           exports: 'named',
           dir: 'dist/es',
+          globals: {
+            vue: 'Vue',
+          },
         },
         {
           format: 'cjs',
@@ -25,6 +29,9 @@ export default defineConfig({
           preserveModules: true,
           exports: 'named',
           dir: 'dist/lib',
+          globals: {
+            vue: 'Vue',
+          },
         },
         {
           format: 'umd',
@@ -33,6 +40,9 @@ export default defineConfig({
           exports: 'named',
           assetFileNames: 'index.css',
           dir: 'dist/dist',
+          globals: {
+            vue: 'Vue',
+          },
         },
       ],
       external: ['vue'],
