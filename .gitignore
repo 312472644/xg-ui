@@ -1,3 +1,10 @@
 # .gitignore
+
+# dependencies
 node_modules
+
+# build output
 dist
+
+# Vitepress
+docs/.vitepress/cache
