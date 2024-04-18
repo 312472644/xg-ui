@@ -9,14 +9,6 @@
     "build:ui": "pnpm --filter ./packages/** run build",
     "build:shared": "pnpm --filter @xg-ui/shared run build"
   },
-  "files": [
-    "dist",
-    "LICENSE",
-    "README.md"
-  ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
   "keywords": [],
   "engines": {
     "node": ">=18.0.0"
@@ -27,6 +19,7 @@
     "@vitejs/plugin-vue": "^5.0.4",
     "@xg-ui/build": "workspace:^",
     "sass": "^1.74.1",
+    "unplugin-vue-components": "^0.26.0",
     "vite": "^5.2.8"
   },
   "dependencies": {

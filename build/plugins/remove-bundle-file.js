@@ -4,8 +4,9 @@ const { logError, logSuccess } = require('../utils');
 
 /**
  * 删除打包指定文件列表
- * @param {*} options
- * @returns
+ * @param {Object} options
+ * @param {Array<string>} options.fileList 需要删除的文件列表
+ * @returns {import('vite').Plugin}
  */
 module.exports = function (options = {}) {
   const { fileList = [] } = options;

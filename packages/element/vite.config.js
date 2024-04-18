@@ -2,15 +2,24 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 const { utils, plugins } = require('@xg-ui/build');
 const { getEntryFileNames } = utils;
-const { copyDest } = plugins;
+const { copyDest, removeDest } = plugins;
 
 export default defineConfig({
-  plugins: [vue(), copyDest({ target: '/theme-chalk/dist', source: '/element/dist/theme-chalk' })],
+  plugins: [
+    vue(),
+    copyDest({
+      list: [
+        { target: '/theme-chalk/dist', source: '/element/dist/theme-chalk' },
+        { target: '/resolver/dist', source: '/element/dist/resolver' },
+      ],
+    }),
+    removeDest(),
+  ],
   build: {
     lib: {
       entry: './index.js',
     },
-    cssCodeSplit: true,
+    // cssCodeSplit: true,
     rollupOptions: {
       output: [
         {

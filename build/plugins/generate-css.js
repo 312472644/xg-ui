@@ -4,14 +4,10 @@ const CleanCSS = require('clean-css');
 const { logError, logSuccess } = require('../utils');
 
 /**
- * @typedef {Object} Options
- * @property {String} Options.fileName 生成的文件名称
- */
-
-/**
  * 将所有样式文件合并成一个文件
- * @param {Options} options
- * @returns {Function}
+ * @param {Object} options
+ * @param {String} options.fileName 生成的文件名称
+ * @returns {import('vite').Plugin}
  */
 module.exports = function generateCSS(options = { fileName: '' }) {
   const { fileName } = options;

@@ -4,31 +4,71 @@
   "description": "xg-ui 所有包打统一入口",
   "main": "./dist/lib/index.js",
   "module": "./dist/es/index.mjs",
-  "scripts": { 
-    "build": "pnpm run build:theme-chalk & vite build",
-    "build:theme-chalk": "pnpm --filter @xg-ui/theme-chalk run build"
+  "scripts": {
+    "build": "pnpm run build:theme-chalk & pnpm run build:resolver & vite build",
+    "build:theme-chalk": "pnpm --filter @xg-ui/theme-chalk run build",
+    "build:resolver": "pnpm --filter @xg-ui/resolver run build",
+    "prepublish": "pnpm run build"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "xg-ui",
+    "element-ui",
+    "vue",
+    "component",
+    "ui",
+    "library",
+    "resolver"
+  ],
+  "author": "xx",
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/flaw_du/xg-ui"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "license": "ISC",
-  "style": "dist/index.css",
+  "style": "./dist/theme-chalk/index.css",
   "exports": {
     ".": {
       "require": "./dist/lib/index.js",
       "import": "./dist/es/index.mjs"
     },
-    "./es": "./dist/es/index.mjs",
-    "./lib": "./dist/index.js",
+    "./es": {
+      "import": "./dist/es/index.mjs"
+    },
+    "./lib": {
+      "require": "./dist/lib/index.js"
+    },
+    "./es/*": {
+      "import": "./dist/es/index.mjs"
+    },
+    "./lib/*": {
+      "require": "./dist/lib/*.js"
+    },
+    "./es/*.mjs": {
+      "import": "./dist/es/*.mjs"
+    },
+    "./lib/*.js": {
+      "require": "./dist/lib/*.js"
+    },
     "./*": "./*",
     "./style.css": "./dist/theme-chalk/index.css",
-    "./style/*/index.css": "./dist/theme-chalk/src/*.css"
+    "./style/*/index.css": "./dist/theme-chalk/src/*.css",
+    "./resolver": {
+      "require": "./dist/resolver/index.cjs",
+      "import": "./dist/resolver/index.mjs"
+    }
   },
   "sideEffects": false,
-  "dependencies": {
+  "devDependencies": {
+    "@xg-ui/build": "workspace:^",
     "@xg-ui/components": "workspace:^",
     "@xg-ui/utils": "workspace:^"
-  },
-  "devDependencies": {
-    "@xg-ui/build": "workspace:^"
   }
 }
