@@ -1,0 +1,17 @@
+.VPNav {
+  .VPImage {
+    &.logo {
+      height: 40px;
+    }
+  }
+}
+
+.image-container {
+  .image-bg {
+    background-color: var(--vp-c-brand);
+    filter: blur(120px);
+  }
+  .VPImage {
+    width: 45%;
+  }
+}
