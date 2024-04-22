@@ -36,6 +36,9 @@ importers:
 
   docs:
     devDependencies:
+      '@xg-ui/element':
+        specifier: workspace:^
+        version: link:../packages/element
       sass:
         specifier: ^1.74.1
         version: 1.74.1
@@ -83,42 +86,11 @@ importers:
 
   packages/resolver: {}
 
-  packages/shared:
-    dependencies:
-      dayjs:
-        specifier: ^1.11.10
-        version: 1.11.10
-
   packages/theme-chalk: {}
 
   packages/utils: {}
 
-  packages/xg-ui:
-    dependencies:
-      '@xg-ui/components':
-        specifier: workspace:^
-        version: link:../components
-      '@xg-ui/shared':
-        specifier: workspace:^
-        version: link:../shared
-
   playground: {}
-
-  web:
-    dependencies:
-      '@xg-ui/xg-ui':
-        specifier: workspace:^
-        version: link:../packages/xg-ui
-      vue:
-        specifier: ^3.4.21
-        version: 3.4.21
-    devDependencies:
-      '@vitejs/plugin-vue':
-        specifier: ^5.0.4
-        version: 5.0.4(vite@5.2.8)(vue@3.4.21)
-      vite:
-        specifier: ^5.1.6
-        version: 5.2.8(sass@1.74.1)
 
 packages:
 
@@ -997,10 +969,6 @@ packages:
 
   /csstype@3.1.3:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
-
-  /dayjs@1.11.10:
-    resolution: {integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==}
-    dev: false
 
   /debug@4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}

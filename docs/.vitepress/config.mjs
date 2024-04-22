@@ -11,9 +11,14 @@ export default defineConfig({
     sidebar,
     socialLinks,
     lastUpdatedText: '最后更新',
+    outline: 2,
     outlineTitle: '目录',
     search: {
       provider: 'local',
+    },
+    docFooter: {
+      prev: false,
+      next: false,
     },
     footer: {
       message: 'Released under the MIT License.',

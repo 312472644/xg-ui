@@ -6,6 +6,22 @@
   }
 }
 
+.VPContent {
+  .VPDoc {
+    .container {
+      display: block;
+      margin: 0;
+      .content-container {
+        max-width: initial;
+        margin: 0;
+      }
+      .aside-container {
+        right: 1vw;
+      }
+    }
+  }
+}
+
 .image-container {
   .image-bg {
     background-color: var(--vp-c-brand);
