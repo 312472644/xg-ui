@@ -4,6 +4,23 @@
       height: 40px;
     }
   }
+  .VPLink {
+    &.active {
+      color: var(--primary-color);
+      > span {
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 10px;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background-color: var(--primary-color);
+        }
+      }
+    }
+  }
 }
 
 .VPContent {
@@ -17,6 +34,16 @@
       }
       .aside-container {
         right: 1vw;
+      }
+    }
+  }
+}
+
+.nav {
+  .VPSidebarItem {
+    &.is-active {
+      .text {
+        color: var(--primary-color) !important;
       }
     }
   }

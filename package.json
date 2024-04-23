@@ -1,13 +1,11 @@
 {
   "name": "xg-ui",
   "version": "1.0.0",
-  "private": true,
   "description": "xg-ui",
   "main": "index.js",
   "module": "index.mjs",
   "scripts": {
-    "build:ui": "pnpm --filter ./packages/** run build",
-    "build:shared": "pnpm --filter @xg-ui/shared run build"
+    "build:element": "pnpm --filter @xg-ui/element run build"
   },
   "keywords": [],
   "engines": {
