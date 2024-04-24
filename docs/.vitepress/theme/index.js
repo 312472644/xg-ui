@@ -1,8 +1,8 @@
 import defaultTheme from 'vitepress/theme';
 import components from './components';
+
 import XgElement from '@xg-ui/element';
 import '@xg-ui/element/style.css';
-
 import './styles/index.scss';
 
 export default {

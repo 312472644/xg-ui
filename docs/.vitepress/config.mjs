@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress';
 import baseConfig from './base-config.mjs';
 import { sidebar, socialLinks, nav } from '../routers';
 
-// https://vitepress.dev/reference/site-config
+// https://vitepress.dev/zh/reference/site-config
 export default defineConfig({
   ...baseConfig,
   themeConfig: {
@@ -10,7 +10,6 @@ export default defineConfig({
     nav,
     sidebar,
     socialLinks,
-    lastUpdatedText: '最后更新',
     outline: 2,
     outlineTitle: '目录',
     search: {

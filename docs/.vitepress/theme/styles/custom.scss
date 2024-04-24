@@ -24,6 +24,29 @@
 }
 
 .VPContent {
+  .VPHome {
+    .name,
+    .clip {
+      -webkit-text-fill-color: var(--primary-color);
+    }
+    .image-container {
+      .image-bg {
+        background-color: var(--vp-c-brand-1);
+        filter: blur(80px);
+        animation: rainbow 20s linear infinite;
+      }
+      .VPImage {
+        width: 45%;
+      }
+    }
+    .VPHomeFeatures {
+      .item {
+        .VPFeature:hover {
+          border-color: var(--primary-color);
+        }
+      }
+    }
+  }
   .VPDoc {
     .container {
       display: block;
@@ -37,6 +60,9 @@
       }
     }
   }
+  .aside-curtain {
+    display: none;
+  }
 }
 
 .nav {
@@ -49,12 +75,44 @@
   }
 }
 
-.image-container {
-  .image-bg {
-    background-color: var(--vp-c-brand);
-    filter: blur(120px);
+.VPSidebar {
+  .VPSidebarItem {
+    &.level-1 {
+      .item[role='button'] {
+        .text {
+          color: #999;
+        }
+      }
+      .indicator {
+        display: none;
+      }
+    }
+    &.level-2 {
+      .indicator {
+        display: block;
+      }
+    }
+    &.level-0 {
+      .item[role='button'] {
+        .text {
+          font-size: 16px;
+        }
+      }
+    }
+    &.is-active {
+      .indicator {
+        background-color: var(--primary-color) !important;
+      }
+    }
   }
-  .VPImage {
-    width: 45%;
-  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #dddee0;
 }

@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: 开始使用
-      link: /markdown-examples
+      link: /component/changelog
     - theme: alt
       text: Github
       link: https://312472644.github.io/
