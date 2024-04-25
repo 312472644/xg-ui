@@ -1,0 +1,35 @@
+<template>
+  <BaseTable :data="data" :columns="columns" />
+</template>
+<script setup>
+import BaseTable from './BaseTable.vue';
+import { defineProps, h } from 'vue';
+
+defineOptions({
+  name: 'PropTable',
+});
+
+const props = defineProps({
+  data: {
+    type: Array,
+    default: () => [],
+  },
+});
+
+const columns = [
+  { title: '名称', key: 'name' },
+  {
+    title: '类型',
+    key: 'type',
+    render: row => h('span', { class: 'special-column' }, row.type),
+  },
+  {
+    title: '默认值',
+    key: 'default',
+    width: '120px',
+    render: row => h('span', { class: 'special-column' }, row.default),
+  },
+  { title: '说明', key: 'direction' },
+  { title: '版本', key: 'version', width: '100px' },
+];
+</script>

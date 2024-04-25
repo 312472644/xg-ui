@@ -10,7 +10,7 @@ export default defineConfig({
     nav,
     sidebar,
     socialLinks,
-    outline: 2,
+    outline: [3, 4],
     outlineTitle: '目录',
     search: {
       provider: 'local',

@@ -1,6 +1,6 @@
-import { NButton, NMessageProvider, NIcon, NTooltip } from 'naive-ui';
+import { NButton, NMessageProvider, NIcon, NTooltip, NDataTable, NTable } from 'naive-ui';
 
-const componentList = [NButton, NMessageProvider, NIcon, NTooltip];
+const componentList = [NButton, NMessageProvider, NIcon, NTooltip, NDataTable,];
 
 export const naiveComponents = componentList.map(item => {
   return {

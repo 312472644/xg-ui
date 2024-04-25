@@ -1,9 +1,6 @@
 <template>
-  <div class="card-code">
+  <div class="card-code" :class="{ active: category && category === hash }">
     <div class="card-header">
-      <div class="header-main">
-        <span>基础</span>
-      </div>
       <div class="header-extra">
         <div class="icon-item">
           <n-tooltip placement="top" trigger="hover">
@@ -42,7 +39,7 @@
   </div>
 </template>
 <script setup>
-import { ref, nextTick, watch } from 'vue';
+import { ref, nextTick, watch, onMounted, onUnmounted } from 'vue';
 import { codeToHtml } from 'shiki';
 import { CopyOutline, CodeOutline } from '@vicons/ionicons5';
 import { message } from '../message';
@@ -56,9 +53,14 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  category: {
+    type: String,
+    default: '',
+  },
 });
 
 const transformHtml = ref(null);
+const hash = ref('');
 const showCode = ref(false);
 
 const handleCopy = () => {
@@ -96,6 +98,18 @@ watch(
     immediate: true,
   }
 );
+
+const handleHashChange = e => {
+  hash.value = decodeURI(window.location.hash.replace('#', ''));
+};
+
+onMounted(() => {
+  window.addEventListener('hashchange', handleHashChange);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('hashchange', handleHashChange);
+});
 </script>
 <style lang="scss">
 .card-code {
@@ -103,10 +117,12 @@ watch(
   padding: 19px 24px 20px 24px;
   border-radius: 3px;
   margin: 20px 0 12px 0;
+  &.active {
+    border-color: var(--primary-color);
+  }
   .card-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+    position: absolute;
+    right: 20px;
     .header-main {
       flex: 1;
       min-width: 0;
@@ -133,6 +149,7 @@ watch(
   .card-content {
     .desc {
       font-size: 14px;
+      padding-right: 100px;
     }
     code {
       margin: 0 5px;

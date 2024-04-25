@@ -63,6 +63,32 @@
   .aside-curtain {
     display: none;
   }
+  .vp-doc._component_button {
+    h3 {
+      font-weight: normal;
+    }
+  }
+  .VPDocAside {
+    .content {
+      padding-left: 10px;
+      .outline-title {
+        padding-left: 10px;
+      }
+      .outline-marker {
+        background-color: var(--primary-color);
+      }
+      .VPDocOutlineItem {
+        .outline-link {
+          padding-left: 10px;
+          &.active {
+            color: #18a058;
+            background: #ddf1e6;
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+  }
 }
 
 .nav {
