@@ -5,7 +5,8 @@
   "main": "index.js",
   "module": "index.mjs",
   "scripts": {
-    "build:element": "pnpm --filter @xg-ui/element run build"
+    "build:element": "pnpm --filter @xg-ui/element run build",
+    "build:docs": "pnpm --filter @xg-ui/docs run docs:build"
   },
   "keywords": [],
   "engines": {
