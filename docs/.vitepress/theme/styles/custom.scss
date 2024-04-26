@@ -21,6 +21,27 @@
       }
     }
   }
+  .VPNavBar:not(.home.top) {
+    .container {
+      > .title {
+        height: 65px;
+        border-bottom: 1px solid var(--border-color);
+      }
+      .VPNavBarTitle.has-sidebar .title {
+        border-bottom-color: transparent;
+      }
+    }
+    .divider-line {
+      background-color: var(--border-color) !important;
+    }
+  }
+}
+
+.VPSidebar {
+  border-right: 1px solid var(--border-color);
+  .group + .group {
+    border-top: none;
+  }
 }
 
 .VPContent {
@@ -56,7 +77,8 @@
         margin: 0;
       }
       .aside-container {
-        right: 1vw;
+        right: 0;
+        width: var(--aside-container-width);
       }
     }
   }
@@ -91,46 +113,41 @@
   }
 }
 
-.nav {
-  .VPSidebarItem {
-    &.is-active {
-      .text {
-        color: var(--primary-color) !important;
-      }
-    }
-  }
-}
-
 .VPSidebar {
   .VPSidebarItem {
-    &.level-1 {
+    &.level-0 {
+      padding-bottom: 0;
       .item[role='button'] {
         .text {
-          color: #999;
+          font-size: 16px;
+          font-weight: normal;
         }
       }
+    }
+    &.level-1 {
       .indicator {
         display: none;
       }
+      padding-left: 10px;
     }
     &.level-2 {
       .indicator {
         display: block;
       }
     }
-    &.level-0 {
-      .item[role='button'] {
-        .text {
-          font-size: 16px;
-        }
-      }
-    }
     &.is-active {
+      .text {
+        color: var(--primary-color) !important;
+      }
       .indicator {
         background-color: var(--primary-color) !important;
       }
     }
   }
+}
+
+aside.VPSidebar {
+  padding-left: 0;
 }
 
 ::-webkit-scrollbar {
@@ -141,4 +158,23 @@
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: #dddee0;
+}
+
+@media (min-width: 1280px) {
+  .VPContent.has-sidebar {
+    padding-right: calc(var(--aside-container-width)) !important;
+  }
+}
+@media (min-width: 1440px) {
+  .VPContent.has-sidebar {
+    padding-right: calc(var(--aside-container-width)) !important;
+  }
+  .VPNavBar.has-sidebar {
+    .content,
+    .divider {
+      padding-left: calc(
+        (100% - (var(--vp-layout-max-width) - 64px)) / 2 + var(--vp-sidebar-width) - 32px
+      ) !important;
+    }
+  }
 }

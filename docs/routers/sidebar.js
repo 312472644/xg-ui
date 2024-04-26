@@ -1,6 +1,6 @@
 export default {
   '/component': [
-    { text: '更新日志', link: '/component/changelog' },
+    { text: '版本', items: [{ text: '更新日志', link: '/component/changelog' }] },
     {
       text: '开发指南',
       items: [

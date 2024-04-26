@@ -1,42 +1,44 @@
 <template>
-  <div class="card-code" :class="{ active: category && category === hash }">
-    <div class="card-header">
-      <div class="header-extra">
-        <div class="icon-item">
-          <n-tooltip placement="top" trigger="hover">
-            <template #trigger>
-              <n-icon size="15" @click="handleCopy">
-                <CopyOutline />
-              </n-icon>
-            </template>
-            <span>复制代码</span>
-          </n-tooltip>
+  <ClientOnly>
+    <div class="card-code" :class="{ active: category && category === hash }">
+      <div class="card-header">
+        <div class="header-extra">
+          <div class="icon-item">
+            <n-tooltip placement="top" trigger="hover">
+              <template #trigger>
+                <n-icon size="15" @click="handleCopy">
+                  <CopyOutline />
+                </n-icon>
+              </template>
+              <span>复制代码</span>
+            </n-tooltip>
+          </div>
+          <div class="icon-item">
+            <n-tooltip placement="top" trigger="hover">
+              <template #trigger>
+                <n-icon size="15" @click="handleToggle">
+                  <CodeOutline />
+                </n-icon>
+              </template>
+              <span>{{ showCode ? '收起代码' : '显示代码' }}</span>
+            </n-tooltip>
+          </div>
         </div>
-        <div class="icon-item">
-          <n-tooltip placement="top" trigger="hover">
-            <template #trigger>
-              <n-icon size="15" @click="handleToggle">
-                <CodeOutline />
-              </n-icon>
-            </template>
-            <span>{{ showCode ? '收起代码' : '显示代码' }}</span>
-          </n-tooltip>
+      </div>
+      <div class="card-content">
+        <div class="desc">
+          <slot name="desc"></slot>
         </div>
+        <div class="demo-view">
+          <slot name="demo"></slot>
+        </div>
+        <slot></slot>
+      </div>
+      <div v-if="showCode" class="card-footer">
+        <div class="code-view" v-html="transformHtml"></div>
       </div>
     </div>
-    <div class="card-content">
-      <div class="desc">
-        <slot name="desc"></slot>
-      </div>
-      <div class="demo-view">
-        <slot name="demo"></slot>
-      </div>
-      <slot></slot>
-    </div>
-    <div v-if="showCode" class="card-footer">
-      <div class="code-view" v-html="transformHtml"></div>
-    </div>
-  </div>
+  </ClientOnly>
 </template>
 <script setup>
 import { ref, nextTick, watch, onMounted, onUnmounted } from 'vue';
