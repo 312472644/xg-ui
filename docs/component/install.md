@@ -2,23 +2,23 @@
 
 ### npm 安装
 
-```
-npm install @vuepress/plugin-google-analytics
+```shell
+npm install @xg-ui/element
 ```
 
 ### yarn 安装
 
-```
-yarn add @vuepress/plugin-google-analytics
+```shell
+yarn add @xg-ui/element
 ```
 ### pnpm 安装
 
-```
-pnpm add @vuepress/plugin-google-analytics
+```shell
+pnpm add @xg-ui/element
 ```
 
-UMD
-```
+### UMD
+```js
 <script src="https://unpkg.com/@vuepress/plugin-google-analytics"></script>
 ```
 

@@ -24,6 +24,9 @@ export default defineConfig({
       copyright: 'Copyright © 2024-present Sugar',
     },
   },
+  // markdown: {
+  //   theme: 'github-dark'
+  // },
   vite: {
     build: {
       chunkSizeWarningLimit: 2000,
