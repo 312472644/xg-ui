@@ -47,13 +47,18 @@ export default defineConfig({
               return 'assets/images/[name]-[hash][extname]';
             }
           },
+          // entryFileNames: chunkInfo => {
+          //   const { name } = chunkInfo;
+          //   console.log('entryFileNames', name);
+          //   return `./com/[name].js`;
+          // },
           chunkFileNames: chunkInfo => {
             const { facadeModuleId } = chunkInfo;
             if (facadeModuleId?.includes('themes')) {
-              return 'chunk/themes/[name]-[hash].js';
+              return 'chunk/themes/[name].js';
             }
             if (facadeModuleId?.includes('langs')) {
-              return 'chunk/langs/[name]-[hash].js';
+              return 'chunk/langs/[name].js';
             }
             return 'chunk/[name]-[hash].js';
           },
