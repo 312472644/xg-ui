@@ -5,6 +5,7 @@ export default {
   description: 'Xg UI使用文档说明',
   lastUpdated: false,
   base: '/xg-ui/',
-  assetsDir: 'component',
+  appearance: false,
+  assetsDir: 'pages',
   head: [['link', { rel: 'icon', href: '/xg-ui/orange.png' }]],
 };

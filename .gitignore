@@ -8,3 +8,9 @@ dist
 
 # Vitepress
 docs/.vitepress/cache
+
+*.log
+
+# local env files
+.env.local
+.env.development.local

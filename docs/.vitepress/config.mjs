@@ -24,9 +24,6 @@ export default defineConfig({
       copyright: 'Copyright © 2024-present Sugar',
     },
   },
-  // markdown: {
-  //   theme: 'github-dark'
-  // },
   vite: {
     build: {
       chunkSizeWarningLimit: 2000,
@@ -36,22 +33,12 @@ export default defineConfig({
             const { name } = chunkInfo;
             if (name.includes('.css')) {
               return 'assets/styles/[name]-[hash][extname]';
-            } else if (
-              name.includes('.woff2') ||
-              name.includes('.woff') ||
-              name.includes('.ttf') ||
-              name.includes('.eot')
-            ) {
+            } else if (['.woff2', '.woff', '.ttf', '.eot'].some(ext => name.includes(ext))) {
               return 'assets/fonts/[name]-[hash][extname]';
             } else if (['.svg', '.png', '.jpg', '.jpeg', '.gif'].some(ext => name.includes(ext))) {
               return 'assets/images/[name]-[hash][extname]';
             }
           },
-          // entryFileNames: chunkInfo => {
-          //   const { name } = chunkInfo;
-          //   console.log('entryFileNames', name);
-          //   return `./com/[name].js`;
-          // },
           chunkFileNames: chunkInfo => {
             const { facadeModuleId } = chunkInfo;
             if (facadeModuleId?.includes('themes')) {

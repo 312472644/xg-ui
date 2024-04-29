@@ -17,8 +17,8 @@ yarn add @xg-ui/element
 pnpm add @xg-ui/element
 ```
 
-### UMD
+<!-- ### UMD
 ```js
 <script src="https://unpkg.com/@vuepress/plugin-google-analytics"></script>
-```
+``` -->
 
