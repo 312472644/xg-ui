@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress';
 import baseConfig from './base-config.mjs';
 import { sidebar, socialLinks, nav } from '../routers';
+import path from 'path';
 
 // https://vitepress.dev/zh/reference/site-config
 export default defineConfig({

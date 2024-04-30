@@ -14,6 +14,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
     "vite": "^5.1.6",
-    "@xg-ui/element": "workspace:^"
+    "@xg-ui/element": "workspace:^",
+    "@xg-ui/hooks": "workspace:^"
   }
 }

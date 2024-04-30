@@ -6,14 +6,13 @@
         <div class="log-date">{{ log.date }}</div>
         <div v-for="content in log.content" class="log-list">
           <div class="log-type">
-            <span v-if="content.type === 'Features'">🎉</span>
-            <span v-if="content.type === 'Bug Fixes'">🐞</span>
+            <span v-if="content.type === CHANGE_LOG_TYPE.Features">✨</span>
+            <span v-if="content.type === CHANGE_LOG_TYPE.BugFixes">🐞</span>
             <span>{{ content.type }}</span>
           </div>
           <div class="log-list-box">
             <ul>
               <li v-for="logItem in content.list" class="log-content-item">
-                <span v-if="content.type === '🎉'">🐞</span>
                 <span>{{ logItem }}</span>
               </li>
             </ul>
@@ -24,6 +23,8 @@
   </ClientOnly>
 </template>
 <script setup>
+import { CHANGE_LOG_TYPE } from '../../../utils/enum';
+
 defineOptions({
   name: 'Log',
 });

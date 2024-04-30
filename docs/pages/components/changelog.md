@@ -3,18 +3,20 @@
 <Log :list="logList"/>
 
 <script setup>
+import { CHANGE_LOG_TYPE } from '../../utils/enum';
+
 const logList = [{
   version: '1.0.0',
   date: '2021-09-01',
   content:[
     {
-      type:'Features',
+      type: CHANGE_LOG_TYPE.Features,
       list:[
         'First version released',
         'First version released'
       ]
     },{
-      type:'Bug Fixes',
+      type: CHANGE_LOG_TYPE.BugFixes,
       list:[
         'Fixed a bug'
       ]
@@ -25,12 +27,12 @@ const logList = [{
   date: '2021-09-01',
   content:[
     {
-      type:'Features',
+      type: CHANGE_LOG_TYPE.Features,
       list:[
         'First version released'
       ]
     },{
-      type:'Bug Fixes',
+      type: CHANGE_LOG_TYPE.BugFixes,
       list:[
         'Fixed a bug'
       ]
